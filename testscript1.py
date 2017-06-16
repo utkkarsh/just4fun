@@ -1,15 +1,14 @@
-#Given the following mapping from number to characters:
-#1 -> @ [@"a", @"b", @"c"]
-#2 -> d, e
-#3 -> f, g
-#4 -> ...
-#Write a function to output all the possible permutations generated from the input string.
-#Example input: 
-#@"213"
-#@"13" ==> af ag bf bg cf cg
-
-#Output: daf, dag, dbf, dbg, dcf, dcg, eaf, eag, ...
-
+'''Given the following mapping from number to characters:
+1 -> @ [@"a", @"b", @"c"]
+2 -> d, e
+3 -> f, g
+4 -> ...
+Write a function to output all the possible permutations generated from the input string.
+Example input: 
+@"213"
+@"13" ==> af ag bf bg cf cg
+Output: daf, dag, dbf, dbg, dcf, dcg, eaf, eag, ...
+'''
 import copy
 
 def mul(pres,my_dict,i):
