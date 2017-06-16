@@ -1,8 +1,17 @@
+#Given the following mapping from number to characters:
+#1 -> @ [@"a", @"b", @"c"]
+#2 -> d, e
+#3 -> f, g
+#4 -> ...
+#Write a function to output all the possible permutations generated from the input string.
+#Example input: 
+#@"213"
+#@"13" ==> af ag bf bg cf cg
+
+#Output: daf, dag, dbf, dbg, dcf, dcg, eaf, eag, ...
+
 import copy
-my_dict={'1':['a','b','c'],'2':['d','e'],'3':['f','g'],'4':['h','i']}
-num1=input("Input:")
-num=copy.deepcopy(num1[::-1])
-res=[];fake=[];flag=0;
+
 def mul(pres,my_dict,i):
 		new_res=my_dict[num[i]]
 		i+=1
@@ -13,8 +22,12 @@ def mul(pres,my_dict,i):
 		del fake[:]
 		return r	
 
-for i in range(len(num)):
+my_dict={'1':['a','b','c'],'2':['d','e'],'3':['f','g'],'4':['h','i']}
+num1=input("Input:")
+num=copy.deepcopy(num1[::-1])
+res=[];fake=[];flag=0;
 
+for i in range(len(num)):
 	if num[i] in my_dict:
 		
 		if len(res)!=0:
@@ -23,8 +36,8 @@ for i in range(len(num)):
 			else:
 				pres=temp;flag=1;	
 			temp=mul(pres,my_dict,i)
-			print(temp)
 
 		if len(res)==0:
 			res=my_dict[num[i]];i+=1;
 				
+print(temp)
